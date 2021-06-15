@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#0C5FB0">
+    <meta name="description" content="Smart Room: Grafieken">
+    <title>Smart Room - Grafieken</title>
+
+    <link rel="icon" href="img/favicon1.svg">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/screen.css" />
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js" integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU" crossorigin="anonymous"></script>
+    <script src="script/dataHandler.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="script/Grafieken.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          toggleNav();
+      })
+
+      function toggleNav() {
+          let toggleTrigger = document.querySelectorAll(".js-toggle-nav");
+          for (let i = 0; i < toggleTrigger.length; i++) {
+              toggleTrigger[i].addEventListener("click", function() {
+                  console.log("Toggle Mobile Nav");
+                  document.querySelector("body").classList.toggle("has-mobile-nav");
+              })
+          }
+      }
+  </script>
+  </head>
+  <body>
+    <div class="c-page">
+      <header class="o-row o-row--md o-row--header">
+        <div class="o-container">
+            <div class="c-header">
+              <div class="c-header__logo">
+                <a href="index.html">
+                  <h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="60" viewBox="0 0 338 86">
+                        <defs>
+                          <style>
+                            .cls-1 {
+                              clip-path: url(#clip-Artboard_1);
+                            }
+                      
+                            .cls-2 {
+                              fill: rgba(12,95,176,0.75);
+                              font-size: 47px;
+                              font-family: Inter-Bold, Inter;
+                              font-weight: 700;
+                            }
+                      
+                            .cls-3 {
+                              fill: rgba(12,95,176,0.5);
+                            }
+                      
+                            .cls-4 {
+                              fill: none;
+                            }
+                      
+                            .cls-5 {
+                              fill: #0c5fb0;
+                            }
+                      
+                            .cls-6 {
+                              fill: #fff;
+                            }
+                          </style>
+                          <clipPath id="clip-Artboard_1">
+                            <rect width="338" height="86"/>
+                          </clipPath>
+                        </defs>
+                        <g id="Artboard_1" data-name="Artboard – 1" class="cls-1">
+                          <rect class="cls-6" width="338" height="86"/>
+                          <g id="Smart_Room_logo" data-name="Smart Room logo" transform="translate(-36 0)">
+                            <text id="Smart_Room" data-name="Smart Room" class="cls-2" transform="translate(93.75 60.5)"><tspan x="0" y="0">Smart </tspan><tspan class="cls-3" y="0">Room</tspan></text>
+                            <g id="lightbulb_black_24dp" transform="translate(24.25 12.481)">
+                              <path id="Path_3" data-name="Path 3" class="cls-4" d="M0,0H61.039V61.039H0Z"/>
+                              <path id="Path_4" data-name="Path 4" class="cls-5" d="M15.173,50.322a2.551,2.551,0,0,0,2.543,2.543H27.89a2.551,2.551,0,0,0,2.543-2.543V47.779H15.173ZM22.8,2A17.8,17.8,0,0,0,12.63,34.4v5.748a2.551,2.551,0,0,0,2.543,2.543h15.26a2.551,2.551,0,0,0,2.543-2.543V34.4A17.8,17.8,0,0,0,22.8,2Zm7.248,28.23L27.89,31.756v5.85H17.716v-5.85L15.555,30.23a12.716,12.716,0,1,1,14.5,0Z" transform="translate(7.716 3.087)"/>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                </h1>
+                </a>
+            </div>
+                <div class="c-header__nav">
+                    <nav class="c-nav">
+                        <ul class="o-list c-nav__list">
+                            <li class="c-nav__item"><a href="Bediening.html" class="c-nav__link">Bediening</a></li>
+                            <li class="c-nav__item"><a href="Data.html" class="c-nav__link">Data</a></li>
+                            <li class="c-nav__item is-selected"><a href="Grafiek.html" class="c-nav__link">Grafieken</a></li>
+                            <li class="c-nav__item"><a href="Historiek.html" class="c-nav__link">Historiek</a></li>
+                            <li class="c-nav__item"><a href="#" class="c-nav__link c-nav__afsluiten js-afsluiten"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#EB1818"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z"/></svg></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="c-header__mobile-nav-trigger">
+                    <button class="o-button-reset c-nav-trigger js-toggle-nav">
+                        <svg class="c-nav-trigger__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                        </svg>
+                    </button> 
+                </div>
+            </div>
+        </div>
+      </header>
+      <section class="o-row o-pagina">
+        <div class="o-container">
+          <h2>Grafieken</h2>
+        </div>
+      </section>
+      <section class="o-row">
+        <div class="o-container">
+        <h3 class="u-color-primary-light">Filter grafieken by tijdstip</h3>
+      </section>
+      <section class="o-row">
+        <div class="o-container">
+          <div class="o-filter-grafiek">
+            <select class="js-tijdstip js-list-tijdstip o-input-choice"> 
+              <option class="js-option-tijdstip" value="Alle data" minuten=0>Alle data</option>
+              <option class="js-option-tijdstip" value="Laatste 30 minuten" minuten=30>Laatste 30 minuten</option>
+              <option class="js-option-tijdstip" value="Laatste uur" minuten=60>Laatste uur</option>
+              <option class="js-option-tijdstip" value="Laatste 2 uur" minuten=120>Laatste 2 uur</option>
+              <option class="js-option-tijdstip" value="Laatste 6uur" minuten=360>Laatste 6 uur</option>
+              <option class="js-option-tijdstip" value="Laatste 12 uur" minuten=720>Laatste 12 uur</option>
+              <option class="js-option-tijdstip" value="Laatste dag" minuten=1440>Laatste dag</option>
+            </select>
+            <input type="button" name="button_filter" id="button_filter" value="Filter" class="c-button c-button--small js-button-filter-tijdstip">
+          </div>
+        </div>
+      </section>
+      <section class="o-row">
+        <div class="o-container">
+          <div class="c-grafiek">
+            <h3 class="u-medium">Grafiek Temperatuur (°C)</h3>
+            <div>
+            <div id="chart" class="js-chart js-chart_sensor1"></div>
+            </div>
+        </div>
+        <div class="c-grafiek">
+            <h3 class="u-medium">Grafiek Luchtkwaliteit CO² (ppm)</h3>
+            <div>
+            <div id="chart" class="js-chart js-chart_sensor2"></div>
+            </div>
+        </div>
+        <div class="c-grafiek">
+            <h3 class="u-medium">Grafiek Lichtsterkte (%)</h3>
+            <div>
+            <div id="chart" class="js-chart js-chart_sensor3"></div>
+            </div>
+        </div>
+        </div>
+      </section>
+    </div>
+    <aside class="c-mobile-nav">
+      <div class="c-mobile-nav__bg"></div>
+      <div class="c-mobile-nav__body">
+          <div class="c-mobile-nav__header">
+            <p class="c-logo">
+              <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="86" viewBox="0 0 338 86">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        clip-path: url(#clip-Artboard_1);
+                      }
+                
+                      .cls-2 {
+                        fill: rgba(12,95,176,0.75);
+                        font-size: 47px;
+                        font-family: Inter-Bold, Inter;
+                        font-weight: 700;
+                      }
+                
+                      .cls-3 {
+                        fill: rgba(12,95,176,0.5);
+                      }
+                
+                      .cls-4 {
+                        fill: none;
+                      }
+                
+                      .cls-5 {
+                        fill: #0c5fb0;
+                      }
+                
+                      .cls-6 {
+                        fill: #fff;
+                      }
+                    </style>
+                    <clipPath id="clip-Artboard_1">
+                      <rect width="338" height="86"/>
+                    </clipPath>
+                  </defs>
+                  <g id="Artboard_1" data-name="Artboard – 1" class="cls-1">
+                    <rect class="cls-6" width="338" height="86"/>
+                    <g id="Smart_Room_logo" data-name="Smart Room logo" transform="translate(-36 0)">
+                      <text id="Smart_Room" data-name="Smart Room" class="cls-2" transform="translate(93.75 60.5)"><tspan x="0" y="0">Smart </tspan><tspan class="cls-3" y="0">Room</tspan></text>
+                      <g id="lightbulb_black_24dp" transform="translate(24.25 12.481)">
+                        <path id="Path_3" data-name="Path 3" class="cls-4" d="M0,0H61.039V61.039H0Z"/>
+                        <path id="Path_4" data-name="Path 4" class="cls-5" d="M15.173,50.322a2.551,2.551,0,0,0,2.543,2.543H27.89a2.551,2.551,0,0,0,2.543-2.543V47.779H15.173ZM22.8,2A17.8,17.8,0,0,0,12.63,34.4v5.748a2.551,2.551,0,0,0,2.543,2.543h15.26a2.551,2.551,0,0,0,2.543-2.543V34.4A17.8,17.8,0,0,0,22.8,2Zm7.248,28.23L27.89,31.756v5.85H17.716v-5.85L15.555,30.23a12.716,12.716,0,1,1,14.5,0Z" transform="translate(7.716 3.087)"/>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </a>
+            </p>
+              <button class="o-button-reset c-nav-trigger js-toggle-nav">
+                  <svg class="c-nav-trigger__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                  </svg>
+              </button>
+          </div>
+          <div class="c-mobile-nav__nav">
+              <nav class="c-nav">
+                  <ul class="o-list c-nav__list">
+                      <li class="c-nav__item"><a href="Bediening.html" class="c-nav__link">Bediening</a></li>
+                      <li class="c-nav__item"><a href="Data.html" class="c-nav__link">Data</a></li>
+                      <li class="c-nav__item is-selected"><a href="Grafiek.html" class="c-nav__link">Grafieken</a></li>
+                      <li class="c-nav__item"><a href="Historiek.html" class="c-nav__link">Historiek</a></li>
+                      <li class="c-nav__item"><a href="#" class="c-nav__link c-nav__afsluiten js-afsluiten"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="24" viewBox="0 0 96 24"><defs><clipPath id="clip-Shutdown_mobile"><rect width="96" height="24"/></clipPath></defs><g id="Shutdown_mobile" clip-path="url(#clip-Shutdown_mobile)"><rect width="96" height="24" fill="rgba(255,255,255,0)"/><g id="power_settings_new_black_24dp" transform="translate(-3)"><path id="Path_84" data-name="Path 84" d="M0,0H24V24H0Z" fill="none"/><path id="Path_85" data-name="Path 85" d="M13,3H11V13h2Zm4.83,2.17L16.41,6.59A6.92,6.92,0,0,1,19,12,7,7,0,1,1,7.58,6.58L6.17,5.17A8.992,8.992,0,1,0,21,12,8.932,8.932,0,0,0,17.83,5.17Z" fill="#eb1818"/></g><text id="Afsluiten" transform="translate(29 18)" fill="#eb1818" font-size="16" font-family="Inter-Medium, Inter" font-weight="500"><tspan x="0" y="0">Afsluiten</tspan></text></g></svg></a></li>
+                  </ul>
+              </nav>
+          </div>
+      </div>
+  </aside>
+  </body>
+</html>
