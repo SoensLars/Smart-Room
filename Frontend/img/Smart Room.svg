@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="338" height="86" viewBox="0 0 338 86">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Artboard_1);
+      }
+
+      .cls-2 {
+        fill: rgba(12,95,176,0.75);
+        font-size: 47px;
+        font-family: Inter-Bold, Inter;
+        font-weight: 700;
+      }
+
+      .cls-3 {
+        fill: rgba(12,95,176,0.5);
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+
+      .cls-5 {
+        fill: #0c5fb0;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-Artboard_1">
+      <rect width="338" height="86"/>
+    </clipPath>
+  </defs>
+  <g id="Artboard_1" data-name="Artboard – 1" class="cls-1">
+    <rect class="cls-6" width="338" height="86"/>
+    <g id="Smart_Room_logo" data-name="Smart Room logo" transform="translate(-36 0)">
+      <text id="Smart_Room" data-name="Smart Room" class="cls-2" transform="translate(93.75 60.5)"><tspan x="0" y="0">Smart </tspan><tspan class="cls-3" y="0">Room</tspan></text>
+      <g id="lightbulb_black_24dp" transform="translate(24.25 12.481)">
+        <path id="Path_3" data-name="Path 3" class="cls-4" d="M0,0H61.039V61.039H0Z"/>
+        <path id="Path_4" data-name="Path 4" class="cls-5" d="M15.173,50.322a2.551,2.551,0,0,0,2.543,2.543H27.89a2.551,2.551,0,0,0,2.543-2.543V47.779H15.173ZM22.8,2A17.8,17.8,0,0,0,12.63,34.4v5.748a2.551,2.551,0,0,0,2.543,2.543h15.26a2.551,2.551,0,0,0,2.543-2.543V34.4A17.8,17.8,0,0,0,22.8,2Zm7.248,28.23L27.89,31.756v5.85H17.716v-5.85L15.555,30.23a12.716,12.716,0,1,1,14.5,0Z" transform="translate(7.716 3.087)"/>
+      </g>
+    </g>
+  </g>
+</svg>

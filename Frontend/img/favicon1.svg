@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-favicon);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #0c5fb0;
+      }
+
+      .cls-4 {
+        fill: rgba(255,255,255,0);
+      }
+    </style>
+    <clipPath id="clip-favicon">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="favicon" class="cls-1">
+    <rect class="cls-4" width="250" height="250"/>
+    <g id="lightbulb_black_24dp">
+      <path id="Path_3" data-name="Path 3" class="cls-2" d="M0,0H250V250H0Z"/>
+      <path id="Path_4" data-name="Path 4" class="cls-3" d="M46.667,199.917a10.447,10.447,0,0,0,10.417,10.417H98.75a10.447,10.447,0,0,0,10.417-10.417V189.5h-62.5ZM77.917,2A72.885,72.885,0,0,0,36.25,134.708V158.25a10.447,10.447,0,0,0,10.417,10.417h62.5a10.447,10.447,0,0,0,10.417-10.417V134.708A72.885,72.885,0,0,0,77.917,2ZM107.6,117.625l-8.854,6.25v23.958H57.083V123.875l-8.854-6.25a52.083,52.083,0,1,1,59.375,0Z" transform="translate(47.083 18.833)"/>
+    </g>
+  </g>
+</svg>
